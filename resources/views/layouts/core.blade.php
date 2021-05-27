@@ -6,7 +6,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-
+<body class="flex h-screen bg-indigo-700 font-body">
+    @yield('content')
 </body>
 </html>
