@@ -10,11 +10,8 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "autoprefixer": "^10.2.5",
         "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.3.0",
-        "tailwindcss": "^2.1.2"
+        "laravel-mix": "^5.0.9",
+        "lodash": "^4.17.19"
     }
 }
