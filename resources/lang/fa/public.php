@@ -19,6 +19,26 @@ return [
     'login_page_register_link' => 'ثبت نام',
 
 
+  /*
+   * Register Page Message
+   */
+
+
+    'register_page_header'                        => 'ثبت نام',
+    'register_page_email'                         => 'ایمیل',
+    'register_page_email_placeholder'             => 'amin@example.com',
+    'register_page_name'                          => 'نام',
+    'register_page_name_placeholder'              => 'نام خود را وارد کنید',
+    'register_page_password'                      => 'کلمه عبور',
+    'register_page_confirm_password'              => 'تایید کلمه عبور',
+    'register_page_mobile'                        => 'شماره همراه',
+    'register_page_mobile_placeholder'            => 'شماره همراه خود را تایید کنید',
+    'register_page_enter_button'                  => 'ثبت نام',
+    'register_page_login_link'                    => 'از اینحا وارد شوید'
+
+
+
+
 
 
 ];

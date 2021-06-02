@@ -1,5 +1,5 @@
 @extends('layouts.auth-layouts')
-@section('title','ورود')
+@section('title',__('public.login_page_header'))
 @section('content')
     <div class="app-content content ">
         <div class="content-overlay"></div>
@@ -42,6 +42,7 @@
                                             <label class="custom-control-label" for="remember-me">@lang('public.login_page_remember_me')</label>
                                         </div>
                                     </div>
+                                    @include('partials.validation-errors')
                                     <button class="btn btn-primary btn-block" tabindex="4">@lang('public.login_page_enter_button')</button>
                                 </form>
 
