@@ -74,7 +74,7 @@
 {{--            </li>--}}
             <div class="group">
                 <a href="{{route('login')}}" class="btn btn-success">ورود</a>
-                <a href="#" class="btn btn-success">ثبت نام</a>
+                <a href="{{route('register')}}" class="btn btn-success">ثبت نام</a>
             </div>
         </ul>
     </div>
