@@ -60,22 +60,26 @@
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
-{{--            <li class="nav-item dropdown dropdown-user">--}}
-{{--                <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                    <div class="user-nav d-sm-flex d-none">--}}
-{{--                        <span class="user-name font-weight-bolder">امین اسمخانی</span>--}}
-{{--                        <span class="user-status">ادمین</span>--}}
-{{--                    </div>--}}
-{{--                    <span class="avatar">--}}
-{{--                        <img class="round" src="{{asset('/images/avatars-s-8.png')}}" alt="avatar" height="40" width="40">--}}
-{{--                        <span class="avatar-status-online"></span>--}}
-{{--                    </span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            @auth
+            <li class="nav-item dropdown dropdown-user">
+                <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="user-nav d-sm-flex d-none">
+                        <span class="user-name font-weight-bolder">امین اسمخانی</span>
+                        <span class="user-status">ادمین</span>
+                    </div>
+                    <span class="avatar">
+                        <img class="round" src="{{asset('/images/avatars-s-8.png')}}" alt="avatar" height="40" width="40">
+                        <span class="avatar-status-online"></span>
+                    </span>
+                </a>
+            </li>
+            @endauth
+            @guest
             <div class="group">
                 <a href="{{route('login')}}" class="btn btn-success">ورود</a>
-                <a href="#" class="btn btn-success">ثبت نام</a>
+                <a href="{{route('register')}}" class="btn btn-success">ثبت نام</a>
             </div>
+            @endguest
         </ul>
     </div>
 </nav>
