@@ -124,7 +124,7 @@
             <li class="active nav-item">
                 <a class="d-flex align-items-center" href="{{route('home')}}">
                     <i data-feather="home"></i>
-                    <span class="menu-title text-truncate" data-i18n="Home">@lang('login.home')</span>
+                    <span class="menu-title text-truncate" data-i18n="Home">@lang('public.home')</span>
                 </a>
             </li>
         </ul>
