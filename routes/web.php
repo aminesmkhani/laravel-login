@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[PanelController::class, 'index'])->name('home');
 
-Route::get('/login',function (){return view('auth.login');})->name('login');
-Route::get('/register',function (){return view('auth.register');})->name('register');
+Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
+   Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('auth.register.form');
+});

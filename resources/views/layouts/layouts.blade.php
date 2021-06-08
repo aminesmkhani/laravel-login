@@ -76,8 +76,8 @@
             @endauth
             @guest
             <div class="group">
-                <a href="{{route('login')}}" class="btn btn-success">ورود</a>
-                <a href="{{route('register')}}" class="btn btn-success">ثبت نام</a>
+{{--                <a href="{{route('login')}}" class="btn btn-success">ورود</a>--}}
+                <a href="{{route('auth.register.form')}}" class="btn btn-success">ثبت نام</a>
             </div>
             @endguest
         </ul>
