@@ -16,7 +16,6 @@
                                 <a href="javascript:void(0);" class="brand-logo">
                                     <h2 class="brand-text text-primary ml-1">@lang('public.register_page_header')</h2>
                                 </a>
-                                @include('partials.alert')
                                 <form class="auth-register-form mt-2" action="#" method="POST">
                                     <div class="form-group">
                                         <label for="register-email" class="form-label">@lang('public.register_page_email')</label>
