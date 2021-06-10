@@ -64,7 +64,7 @@
             <li class="nav-item dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none">
-                        <span class="user-name font-weight-bolder">امین اسمخانی</span>
+                        <span class="user-name font-weight-bolder">{{Auth::user()->name}}</span>
                         <span class="user-status">ادمین</span>
                     </div>
                     <span class="avatar">
@@ -76,8 +76,8 @@
             @endauth
             @guest
             <div class="group">
-                <a href="{{route('login')}}" class="btn btn-success">ورود</a>
-                <a href="{{route('register')}}" class="btn btn-success">ثبت نام</a>
+{{--                <a href="{{route('login')}}" class="btn btn-success">ورود</a>--}}
+                <a href="{{route('auth.register.form')}}" class="btn btn-success">ثبت نام</a>
             </div>
             @endguest
         </ul>

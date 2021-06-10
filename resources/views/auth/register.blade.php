@@ -16,15 +16,16 @@
                                 <a href="javascript:void(0);" class="brand-logo">
                                     <h2 class="brand-text text-primary ml-1">@lang('public.register_page_header')</h2>
                                 </a>
-                                <form class="auth-register-form mt-2" action="#" method="POST">
+                                <form class="auth-register-form mt-2" action="{{route('auth.register')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
-                                        <label for="register-email" class="form-label">@lang('public.register_page_email')</label>
-                                        <input type="text" class="form-control" id="register-email" name="register-email" placeholder="@lang('public.register_page_email_placeholder')" aria-describedby="register-email" tabindex="2" />
+                                        <label for="email" class="form-label">@lang('public.register_page_email')</label>
+                                        <input type="text" value="{{old('email')}}" class="form-control" id="email" name="email" placeholder="@lang('public.register_page_email_placeholder')" aria-describedby="register-email" tabindex="2" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name" class="form-label">@lang('public.register_page_name')</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="@lang('public.register_page_name_placeholder')" aria-describedby="register-username" tabindex="1" autofocus />
+                                        <input type="text" value="{{old('name')}}" class="form-control" id="name" name="name" placeholder="@lang('public.register_page_name_placeholder')" aria-describedby="register-username" tabindex="1" autofocus />
                                     </div>
 
                                     <div class="form-group">
@@ -38,10 +39,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="confirm" class="form-label">@lang('public.register_page_confirm_password')</label>
+                                        <label for="password_confirmation" class="form-label">@lang('public.register_page_confirm_password')</label>
 
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge" id="confirm" name="confirm" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
+                                            <input type="password" class="form-control form-control-merge" id="password_confirmation" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                                             </div>
@@ -58,9 +59,9 @@
 
                                 <p class="text-center mt-2">
                                     <span>از قبل حساب دارید؟</span>
-                                    <a href="{{route('login')}}">
-                                        <span>@lang('public.register_page_login_link')</span>
-                                    </a>
+{{--                                    <a href="{{route('login')}}">--}}
+{{--                                        <span>@lang('public.register_page_login_link')</span>--}}
+{{--                                    </a>--}}
                                 </p>
 
                                 <div class="divider my-2">

@@ -23,6 +23,10 @@ return [
     'attributes' => [
         'email_type' => 'نوع ایمیل',
         'user'  => 'کاربر',
-        'text'  => 'متن پیام کوتاه'
+        'email' => 'ایمیل',
+        'name' => 'نام',
+        'password' => 'رمز عبور',
+        'text'  => 'متن پیام کوتاه',
+        'phone_number' => 'شماره همراه'
     ]
 ];
