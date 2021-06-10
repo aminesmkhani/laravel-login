@@ -19,4 +19,5 @@ Route::get('/',[PanelController::class, 'index'])->name('home');
 
 Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
    Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('auth.register.form');
+   Route::post('register', [RegisterController::class, 'register'])->name('auth.register');
 });

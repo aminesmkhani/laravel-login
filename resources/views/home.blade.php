@@ -7,6 +7,7 @@
     <div class="row match-height">
         <!-- Greetings Card starts -->
         <div class="col-lg-12 col-md-12 col-sm-12">
+            @include('partials.alert')
             <div class="card card-congratulations">
                 <div class="card-body text-center">
                     <img src="{{asset('images/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />

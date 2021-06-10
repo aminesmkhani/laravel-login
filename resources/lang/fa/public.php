@@ -8,7 +8,6 @@ return [
    /*
     * Login Page Message
     */
-
     'login_page_header' => 'ورود',
     'login_page_email'  => 'ایمیل',
     'login_page_email_placeholder'  => 'login@example.com',
@@ -18,12 +17,9 @@ return [
     'login_page_enter_button' => 'ورود',
     'login_page_register_link' => 'ثبت نام',
 
-
   /*
    * Register Page Message
    */
-
-
     'register_page_header'                        => 'ثبت نام',
     'register_page_email'                         => 'ایمیل',
     'register_page_email_placeholder'             => 'amin@example.com',
@@ -34,11 +30,14 @@ return [
     'register_page_mobile'                        => 'شماره همراه',
     'register_page_mobile_placeholder'            => 'شماره همراه خود را تایید کنید',
     'register_page_enter_button'                  => 'ثبت نام',
-    'register_page_login_link'                    => 'از اینحا وارد شوید'
+    'register_page_login_link'                    => 'از اینحا وارد شوید',
 
 
+/*
+ * Register Controller
+ */
 
-
+    'new_registred' => 'ثبت نام با موفقیت انجام شد'
 
 
 ];
