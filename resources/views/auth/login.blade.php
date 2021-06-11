@@ -16,21 +16,22 @@
                                 <a href="javascript:void(0);" class="brand-logo">
                                     <h2 class="brand-text text-primary ml-1">@lang('public.login_page_header')</h2>
                                 </a>
-                                <form class="auth-login-form mt-2" action="#" method="POST">
+                                <form class="auth-login-form mt-2" action="{{route('auth.login')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
-                                        <label for="login-email" class="form-label">@lang('public.login_page_email')</label>
-                                        <input type="text" class="form-control" id="login-email" name="login-email" placeholder="@lang('public.login_page_email_placeholder')" aria-describedby="login-email" tabindex="1" autofocus />
+                                        <label for="email" class="form-label">@lang('public.login_page_email')</label>
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="@lang('public.login_page_email_placeholder')" aria-describedby="login-email" tabindex="1" autofocus />
                                     </div>
 
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
-                                            <label for="login-password">@lang('public.login_page_password')</label>
+                                            <label for="password">@lang('public.login_page_password')</label>
                                             <a href="#">
                                                 <small>@lang('public.login_page_forget_password')</small>
                                             </a>
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge" id="login-password" name="login-password" tabindex="2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="login-password" />
+                                            <input type="password" class="form-control form-control-merge" id="password" name="password" tabindex="2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="login-password" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                                             </div>
@@ -38,7 +39,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" type="checkbox" id="remember-me" tabindex="3" />
+                                            <input class="custom-control-input" type="checkbox" name="remember-me" id="remember-me" tabindex="3" />
                                             <label class="custom-control-label" for="remember-me">@lang('public.login_page_remember_me')</label>
                                         </div>
                                     </div>
@@ -74,6 +75,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('js')

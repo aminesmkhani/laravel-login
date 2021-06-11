@@ -21,3 +21,11 @@
         </div>
     </div>
 @endif
+
+@if(session('wrongCredentials'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.wrongCredentials')
+        </div>
+    </div>
+@endif

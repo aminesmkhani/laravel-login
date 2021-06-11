@@ -3,7 +3,7 @@
 
 return [
     'integer' => ':attribute باید به صورت عددی باشد',
-    'exists'  => ':attribute باید به صورت صحیح وارد شود',
+    'exists'  => ':attribute داخل سیستم وجود ندارد',
     'string'  => ':attribute باید به صورت صحیح وارد شود',
     'required'  => ':attribute الزامی میباشد',
     'email'  => ':attribute باید به صورت ایمیل باشد',

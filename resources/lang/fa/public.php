@@ -34,10 +34,11 @@ return [
 
 
 /*
- * Register Controller
+ *  Alert Area
  */
 
-    'new_registred' => 'ثبت نام با موفقیت انجام شد'
+    'new_registred' => 'ثبت نام با موفقیت انجام شد',
+    'wrongCredentials' => 'نام کاربری و کلمه عبور نادرست می باشد'
 
 
 ];
