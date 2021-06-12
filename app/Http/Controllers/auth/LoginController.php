@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    use ThrottlesLogins;
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
