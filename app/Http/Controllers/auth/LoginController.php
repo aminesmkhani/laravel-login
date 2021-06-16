@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +25,14 @@ class LoginController extends Controller
     {
         $this->validateForm($request);
 
+        if ($this->hasTooManyLoginAttempts($request)) {
+            return $this->sendLockoutResponse($request);
+        }
+
         if ($this->attemptLogin($request)){
             $this->sendSuccessRedirect();
         }
+        $this->incrementLoginAttempts($request);
         return $this->sendLoginFailedResponse();
 
     }
@@ -65,5 +71,11 @@ class LoginController extends Controller
         session()->invalidate();
         Auth::logout();
         return redirect()->route('home');
+    }
+
+
+    protected function username()
+    {
+        return 'email';
     }
 }
