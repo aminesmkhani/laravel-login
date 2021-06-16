@@ -32,3 +32,11 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
     Route::get('logout',[LoginController::class, 'logout'])->name('auth.logout');
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
