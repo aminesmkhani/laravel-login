@@ -143,6 +143,24 @@
             </div>
         </div>
         <div class="content-body">
+            <section id="basic-alerts">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="demo-spacing-0">
+                                    <div class="alert alert-danger" role="alert">
+                                        <div class="alert-body">
+                                            @if(session('mustVerifyEmail'))
+                                                @lang('public.you_must_verify_you_email')
+                                            @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             @yield('content')
         </div>
     </div>
