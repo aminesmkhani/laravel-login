@@ -4,6 +4,9 @@ use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +19,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PanelController::class, 'index'])->name('home');
-Route::get('/home',[PanelController::class, 'index']);
+//Route::get('/',[PanelController::class, 'index'])->name('home');
+//Route::get('/home',[PanelController::class, 'index']);
+
+Route::get('/',function (){
+
+  $url = URL::temporarySignedRoute('test', now()->addMinutes(60),['id'=> 85, 'email' => 'amin@gmail.com']);
+   dd($url);
+});
+
+Route::get('/verify',function (Request $request){
+    Url::hasValidSignature($request);
+})->name('test');
+
+
 
 Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
    Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('auth.register.form');
@@ -33,10 +48,10 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
 
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//
+//Auth::routes();
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
