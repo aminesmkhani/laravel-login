@@ -142,7 +142,9 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
             </div>
         </div>
+
         <div class="content-body">
+            @if(session('mustVerifyEmail'))
             <section id="basic-alerts">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
@@ -151,16 +153,16 @@
                                 <div class="demo-spacing-0">
                                     <div class="alert alert-danger" role="alert">
                                         <div class="alert-body">
-                                            @if(session('mustVerifyEmail'))
                                                 @lang('public.you_must_verify_you_email')
-                                            @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
+            @endif
             @yield('content')
         </div>
     </div>

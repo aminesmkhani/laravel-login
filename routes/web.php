@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,18 +18,18 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::get('/',[PanelController::class, 'index'])->name('home');
-//Route::get('/home',[PanelController::class, 'index']);
+Route::get('/',[PanelController::class, 'index'])->name('home');
+Route::get('/home',[PanelController::class, 'index']);
 
-Route::get('/',function (){
-
-  $url = URL::temporarySignedRoute('test', now()->addMinutes(60),['id'=> 85, 'email' => 'amin@gmail.com']);
-   dd($url);
-});
-
-Route::get('/verify',function (Request $request){
-    Url::hasValidSignature($request);
-})->name('test');
+//Route::get('/',function (){
+//
+//  $url = URL::temporarySignedRoute('test', now()->addMinutes(60),['id'=> 85, 'email' => 'amin@gmail.com']);
+//   dd($url);
+//});
+//
+//Route::get('/verify',function (Request $request){
+//    Url::hasValidSignature($request);
+//})->name('test');
 
 
 
