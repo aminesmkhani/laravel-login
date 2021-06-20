@@ -153,7 +153,7 @@
                                 <div class="demo-spacing-0">
                                     <div class="alert alert-danger" role="alert">
                                         <div class="alert-body">
-                                                @lang('public.you_must_verify_you_email')
+                                                @lang('public.you_must_verify_you_email', ['link' => route('auth.email.send.verification')])
                                     </div>
                                 </div>
                             </div>
@@ -163,6 +163,26 @@
               </div>
             </section>
             @endif
+            @if(session('verificationEmailSent'))
+            <section id="basic-alerts">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="demo-spacing-0">
+                                    <div class="alert alert-success" role="alert">
+                                        <div class="alert-body">
+                                                @lang('public.verification_email_sent')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+            @endif
+
             @yield('content')
         </div>
     </div>
