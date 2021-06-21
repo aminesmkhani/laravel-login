@@ -29,3 +29,11 @@
         </div>
     </div>
 @endif
+
+@if(session('emailHasVerified'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.email_has_verified')
+        </div>
+    </div>
+@endif
