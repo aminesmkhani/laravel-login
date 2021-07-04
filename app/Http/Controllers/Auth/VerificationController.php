@@ -56,8 +56,9 @@ class VerificationController extends Controller
 
     public function verify(Request $request)
     {
-        echo "hi";
-        die();
+      ddd($request);
+
+
         if ($request->user()->hasVerifiedEmail())
         {
             return redirect()->route('home');
