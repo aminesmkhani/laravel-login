@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\auth;
 
+use App\Events\UserRegistered;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,8 +24,6 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-//        dd($request->all());
-
         # validate
         $this->validateForm($request);
         # store user
@@ -32,6 +31,8 @@ class RegisterController extends Controller
         #login
         Auth::login($user);
         #redirect
+
+        event(new UserRegistered($user));
         return redirect()->route('home')->with('registred',true);
     }
 
