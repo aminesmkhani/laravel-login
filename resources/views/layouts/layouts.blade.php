@@ -61,19 +61,19 @@
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
             @auth
-            <li class="nav-item dropdown dropdown-user">
                 <a href="{{route('auth.logout')}}" class="btn btn-danger">خروج</a>
-                <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="user-nav d-sm-flex d-none">
-                        <span class="user-name font-weight-bolder">{{Auth::user()->name}}</span>
-                        <span class="user-status">ادمین</span>
-                    </div>
-                    <span class="avatar">
+                <li class="nav-item dropdown dropdown-user">
+                        <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="user-nav d-sm-flex d-none">
+                                <span class="user-name font-weight-bolder">{{Auth::user()->name}}</span>
+                                <span class="user-status">ادمین</span>
+                            </div>
+                            <span class="avatar">
                         <img class="round" src="{{asset('/images/avatars-s-8.png')}}" alt="avatar" height="40" width="40">
                         <span class="avatar-status-online"></span>
                     </span>
-                </a>
-            </li>
+                        </a>
+                </li>
             @endauth
             @guest
             <div class="group">
@@ -115,8 +115,12 @@
                     </g>
                   </g>
                 </svg></span>
-                    <h2 class="brand-text">Vuexy</h2></a></li>
-            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+                    <h2 class="brand-text">Auth</h2></a></li>
+            <li class="nav-item nav-toggle">
+                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
+                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
+                    <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i>
+                </a></li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
@@ -128,6 +132,14 @@
                     <span class="menu-title text-truncate" data-i18n="Home">@lang('public.home')</span>
                 </a>
             </li>
+            @auth()
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="{{route('auth.logout')}}">
+                    <i data-feather="log-out"></i>
+                    <span class="menu-title text-truncate" data-i18n="log-out">@lang('public.logout')</span>
+                </a>
+            </li>
+            @endauth
         </ul>
     </div>
 </div>
