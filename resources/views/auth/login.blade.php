@@ -49,7 +49,7 @@
 
                                 <p class="text-center mt-2">
                                     <span>فرد جدید هستید؟</span>
-                                    <a href="#">
+                                    <a href="{{route('auth.register')}}">
                                         <span>@lang('public.login_page_register_link')</span>
                                     </a>
                                 </p>
