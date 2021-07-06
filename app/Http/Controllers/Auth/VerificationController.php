@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -56,6 +57,11 @@ class VerificationController extends Controller
 
     public function verify(Request $request)
     {
+        if ($request->user()->email != $request->query('email')){
+            return "Unable to access this link";
+        }
+
+
         if ($request->user()->hasVerifiedEmail())
         {
             return redirect()->route('home');
