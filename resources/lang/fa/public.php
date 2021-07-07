@@ -34,6 +34,14 @@ return [
     'register_page_login_link'                    => 'از اینحا وارد شوید',
 
 
+  /*
+   *  Forget Password Page Message
+   */
+
+    'forget_password_page_header'                          => 'فراموشی رمز عبور',
+
+
+
 /*
  *  Alert Area
  */

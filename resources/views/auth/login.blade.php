@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
                                             <label for="password">@lang('public.login_page_password')</label>
-                                            <a href="#">
+                                            <a href="{{route('auth.password.forget.form')}}">
                                                 <small>@lang('public.login_page_forget_password')</small>
                                             </a>
                                         </div>
