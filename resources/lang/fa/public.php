@@ -60,7 +60,11 @@ return [
     ',
 
     'verification_email_sent' => 'ایمیل تاییدیه با موفقیت ارسال شد',
-    'email_has_verified'    => 'ایمیل شما با موفقیت تایید شد'
+    'email_has_verified'    => 'ایمیل شما با موفقیت تایید شد',
+
+    # Reset Password
+    'resetLinkSent'     => 'لینک بازیابی با موفقیت ارسال شد',
+    'resetLinkFailed'   => 'ارسال لینک بازیابی با مشکل مواجه شد لطفاٌ مجدداٌ تلاش فرمایید'
 
 
 ];
