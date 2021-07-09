@@ -38,7 +38,12 @@ return [
    *  Forget Password Page Message
    */
 
-    'forget_password_page_header'                          => 'فراموشی رمز عبور',
+    'forget_password_page_header'                          => 'فراموشی رمز عبور 🔒',
+    'forget_password_page_form_description'                => 'ایمیل خود را وارد کنید و ما دستورالعمل هایی را برای تنظیم مجدد رمز عبور شما ارسال خواهیم کرد',
+    'forget_password_page_email'                           => 'ایمیل',
+    'forget_password_page_send_link_text'                  => 'ارسال لینک بازیابی',
+    'forget_password_page_back_login'                      => 'برگشتن به ورود',
+
 
 
 
