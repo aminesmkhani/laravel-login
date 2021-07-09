@@ -38,7 +38,12 @@ return [
    *  Forget Password Page Message
    */
 
-    'forget_password_page_header'                          => 'فراموشی رمز عبور',
+    'forget_password_page_header'                          => 'فراموشی رمز عبور 🔒',
+    'forget_password_page_form_description'                => 'ایمیل خود را وارد کنید و ما دستورالعمل هایی را برای تنظیم مجدد رمز عبور شما ارسال خواهیم کرد',
+    'forget_password_page_email'                           => 'ایمیل',
+    'forget_password_page_send_link_text'                  => 'ارسال لینک بازیابی',
+    'forget_password_page_back_login'                      => 'برگشتن به ورود',
+
 
 
 
@@ -55,7 +60,11 @@ return [
     ',
 
     'verification_email_sent' => 'ایمیل تاییدیه با موفقیت ارسال شد',
-    'email_has_verified'    => 'ایمیل شما با موفقیت تایید شد'
+    'email_has_verified'    => 'ایمیل شما با موفقیت تایید شد',
+
+    # Reset Password
+    'resetLinkSent'     => 'لینک بازیابی با موفقیت ارسال شد',
+    'resetLinkFailed'   => 'ارسال لینک بازیابی با مشکل مواجه شد لطفاٌ مجدداٌ تلاش فرمایید'
 
 
 ];

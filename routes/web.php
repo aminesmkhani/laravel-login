@@ -42,6 +42,8 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
 
     # Forget Password
     Route::get('password/forget',[ForgotPasswordController::class,'showForgetForm'])->name('auth.password.forget.form');
+    Route::post('password/forget',[ForgotPasswordController::class,'sendResetLink'])->name('auth.password.forget');
+    Route::get('password/reset',[ResetPasswordController::class,'showResetForm'])->name('auth.password.reset.form');
 
 });
 

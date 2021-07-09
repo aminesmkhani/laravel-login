@@ -59,9 +59,9 @@
 
                                 <p class="text-center mt-2">
                                     <span>از قبل حساب دارید؟</span>
-{{--                                    <a href="{{route('login')}}">--}}
-{{--                                        <span>@lang('public.register_page_login_link')</span>--}}
-{{--                                    </a>--}}
+                                    <a href="{{route('auth.login')}}">
+                                        <span>@lang('public.register_page_login_link')</span>
+                                    </a>
                                 </p>
 
                                 <div class="divider my-2">

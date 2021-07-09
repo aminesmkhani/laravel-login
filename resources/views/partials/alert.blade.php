@@ -31,9 +31,27 @@
 @endif
 
 @if(session('emailHasVerified'))
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-success" role="alert">
         <div class="alert-body">
             @lang('public.email_has_verified')
         </div>
     </div>
 @endif
+
+
+@if(session('resetLinkSent'))
+    <div class="alert alert-success" role="alert">
+        <div class="alert-body">
+            @lang('public.resetLinkSent')
+        </div>
+    </div>
+@endif
+
+@if(session('resetLinkFailed'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.resetLinkFailed')
+        </div>
+    </div>
+@endif
+
