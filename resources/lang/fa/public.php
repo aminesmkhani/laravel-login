@@ -46,6 +46,18 @@ return [
 
 
 
+   /*
+    *  Reset Password Page Message
+    */
+
+
+    'reset_password_page_header'                                    => 'بازیابی رمز عبور 🔒',
+    'reset_password_page_alert_message'                             => 'رمز ورود جدید شما باید متفاوت از رمزهای عبور قبلی باشد',
+    'reset_password_page_new_password'                              => 'رمز عبور جدید',
+    'reset_password_page_confirm_password'                          => 'تایید رمز عبور جدید',
+    'reset_password_page_button'                                    => 'تنظیم رمز عبور جدید',
+    'reset_password_back_to_login'                                  => 'برگشتن به ورود',
+
 
 /*
  *  Alert Area
