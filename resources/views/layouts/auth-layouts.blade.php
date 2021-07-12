@@ -36,7 +36,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('css-rtl/custom-rtl.css')}}">
     <!-- END: Custom CSS-->
-
+    @yield('links')
 </head>
 <!-- END: Head-->
 

@@ -1,4 +1,7 @@
 @extends('layouts.auth-layouts')
+@section('links')
+    <script src="https://www.google.com/recaptcha/api.js?hl=fa" async defer></script>
+@endsection
 @section('title',__('public.login_page_header'))
 @section('content')
     <div class="app-content content ">
@@ -37,6 +40,9 @@
                                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="form-group center">
+                                        @include('partials.recaptcha')
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
