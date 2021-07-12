@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 
 class ResetPasswordController extends Controller
 {
@@ -44,10 +46,21 @@ class ResetPasswordController extends Controller
 
         # validate
         $this->validateForm($request);
-        # check token and email
+        # check token and email & reset password
+            $response = Password::broker()->reset(
+                $request->only('email', 'password', 'password_confirmation', 'token'),
+                    function ($user, $password)
+                     {
+                        $this->resetPassword($user, $password);
+                     }
+        );
 
-        # reset password
         # redirect
+        return $response == Password::PASSWORD_RESET
+        ? redirect()->route('auth.login')->with('passwordChanged',true)
+        : back()->with('cantChangePassword',true);
+        # redirect
+
     }
 
 
@@ -59,5 +72,12 @@ class ResetPasswordController extends Controller
             'email'     => ['required', 'email', 'exists:users'],
             'token'     => ['required', 'string'],
         ]);
+    }
+
+    protected function resetPassword($user, $password)
+    {
+        $user->password = Hash::make($password);
+        $user->save();
+
     }
 }

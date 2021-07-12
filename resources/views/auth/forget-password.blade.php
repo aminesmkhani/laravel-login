@@ -13,12 +13,11 @@
                     <div class="auth-inner py-2">
                         <!-- Forgot Password v1 -->
                         <div class="card mb-0">
-                            @include('partials.alert')
                             <div class="card-body">
                                 <a href="javascript:void(0);" class="brand-logo">
                                     <h2 class="brand-text text-primary ml-1">@lang('public.forget_password_page_header') </h2>
                                 </a>
-
+                                @include('partials.alert')
                                 <p class="card-text mb-2">@lang('public.forget_password_page_form_description')</p>
 
                                 <form class="auth-forgot-password-form mt-2" action="{{route('auth.password.forget')}}" method="POST">
