@@ -57,6 +57,7 @@ return [
     'reset_password_page_confirm_password'                          => 'تایید رمز عبور جدید',
     'reset_password_page_button'                                    => 'تنظیم رمز عبور جدید',
     'reset_password_back_to_login'                                  => 'برگشتن به ورود',
+    'reset_password_your_email'                                     => 'ایمیل شما',
 
 
 /*
@@ -76,7 +77,8 @@ return [
 
     # Reset Password
     'resetLinkSent'     => 'لینک بازیابی با موفقیت ارسال شد',
-    'resetLinkFailed'   => 'ارسال لینک بازیابی با مشکل مواجه شد لطفاٌ مجدداٌ تلاش فرمایید'
-
+    'resetLinkFailed'   => 'ارسال لینک بازیابی با مشکل مواجه شد لطفاٌ مجدداٌ تلاش فرمایید',
+    'cantChangePassword'=> 'مشکلی در هنگام تغییر پسورد پیش آمده است',
+    'passwordChanged'   => 'رمز عبور شما با موفقیت تغییر یافت',
 
 ];

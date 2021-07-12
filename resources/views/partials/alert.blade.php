@@ -55,3 +55,19 @@
     </div>
 @endif
 
+@if(session('cantChangePassword'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.cantChangePassword')
+        </div>
+    </div>
+@endif
+
+@if(session('passwordChanged'))
+    <div class="alert alert-success" role="alert">
+        <div class="alert-body">
+            @lang('public.passwordChanged')
+        </div>
+    </div>
+@endif
+

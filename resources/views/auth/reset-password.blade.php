@@ -18,10 +18,19 @@
                                 </a>
 
                                 <p class="card-text mb-2">@lang('public.reset_password_page_alert_message')</p>
+                                @include('partials.alert')
 
                                 <form class="auth-reset-password-form mt-2" action="{{route('auth.password.reset')}}" method="POST">
                                     @csrf
                                     <input type="hidden" name="token" value="{{$token}}">
+                                    <div class="form-group">
+                                        <div class="d-flex justify-content-between">
+                                            <label for="email">@lang('public.reset_password_your_email')</label>
+                                        </div>
+                                        <div class="input-group input-group-merge form-password-toggle">
+                                            <input type="email" class="form-control form-control-merge" id="reset-password-new" readonly value="{{$email}}" name="email" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="reset-password-new" tabindex="1" autofocus />
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
                                             <label for="reset-password-new">@lang('public.reset_password_page_new_password')</label>
@@ -38,7 +47,7 @@
                                             <label for="reset-password-confirm">@lang('public.reset_password_page_confirm_password')</label>
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge" id="reset-password-confirm" name="password-confirm" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="reset-password-confirm" tabindex="2" />
+                                            <input type="password" class="form-control form-control-merge" id="reset-password-confirm" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="reset-password-confirm" tabindex="2" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                                             </div>
@@ -49,7 +58,7 @@
                                 </form>
 
                                 <p class="text-center mt-2">
-                                    <a href="page-auth-login-v1.html"> <i data-feather="chevron-left"></i> @lang('public.reset_password_back_to_login') </a>
+                                    <a href="{{route('auth.login')}}"> <i data-feather="chevron-left"></i> @lang('public.reset_password_back_to_login') </a>
                                 </p>
                             </div>
                         </div>
