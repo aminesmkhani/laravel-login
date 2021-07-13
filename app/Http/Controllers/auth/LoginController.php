@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use App\Rules\Recaptcha;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+//        dd($request->all());
         $this->validateForm($request);
 
         if ($this->hasTooManyLoginAttempts($request)) {
@@ -40,10 +42,16 @@ class LoginController extends Controller
 
     protected function validateForm(Request $request)
     {
-        $request->validate([
+        $request->validate(
+        [
            'email' => ['required', 'email', 'exists:users'],
-           'password' => ['required']
-        ]);
+           'password' => ['required'],
+           'g-recaptcha-response'  => ['required',new Recaptcha],
+        ],
+        [
+            'g-recaptcha-response.required' => __('public.recaptcha'),
+        ]
+    );
     }
 
 
