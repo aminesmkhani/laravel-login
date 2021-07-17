@@ -66,10 +66,10 @@
                                 </div>
 
                                 <div class="auth-footer-btn d-flex justify-content-center">
-                                    <a href="javascript:void(0)" class="btn btn-google">
+                                    <a href="{{route('auth.login.provider.redirect','google')}}" class="btn btn-google">
                                         <i data-feather="mail"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-github">
+                                    <a href="" class="btn btn-github">
                                         <i data-feather="github"></i>
                                     </a>
                                 </div>
