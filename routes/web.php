@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\Auth\MagicController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SocialController;
@@ -49,8 +50,13 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
     Route::post('password/reset',[ResetPasswordController::class,'reset'])->name('auth.password.reset');
 
 
+    # Login Socials
     Route::get('redirect/{provider}',[SocialController::class,'redirectToProvider'])->name('auth.login.provider.redirect');
     Route::get('{provider}/callback',[SocialController::class,'providerCallback'])->name('auth.login.provider.callback');
+
+
+    # Login Magic Link
+    Route::get('magic/login',[MagicController::class,'showMagicForm'])->name('auth.magic.login.form');
 
 
 });

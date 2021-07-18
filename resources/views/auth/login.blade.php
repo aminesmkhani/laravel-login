@@ -69,8 +69,8 @@
                                     <a href="{{route('auth.login.provider.redirect','google')}}" class="btn btn-google">
                                         <i data-feather="mail"></i>
                                     </a>
-                                    <a href="" class="btn btn-github">
-                                        <i data-feather="github"></i>
+                                    <a href="{{route('auth.magic.login.form')}}" class="btn btn-github">
+                                        ورود بدون رمز عبور
                                     </a>
                                 </div>
                             </div>

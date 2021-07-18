@@ -19,6 +19,18 @@ return [
     'login_page_enter_button' => 'ورود',
     'login_page_register_link' => 'ثبت نام',
 
+
+ /*
+  *  Magic Login Message
+  */
+
+    'magic_login_page_header'   => 'ورود بدون رمز عبور',
+    'magic_login_page_email'    => 'ایمیل',
+    'magic_login_page_email_placeholder'    => 'ایمیل خود را وارد کنید',
+    'magic_login_page_remember_me'  => 'منو یادت باشه',
+    'magic_login_page_button'   => 'ارسال لینک ورود',
+    'magic_login_page_any_methods' => 'ورود',
+
   /*
    * Register Page Message
    */
