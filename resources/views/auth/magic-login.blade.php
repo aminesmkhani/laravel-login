@@ -1,7 +1,4 @@
 @extends('layouts.auth-layouts')
-@section('links')
-    <script src="https://www.google.com/recaptcha/api.js?hl=fa" async defer></script>
-@endsection
 @section('title',__('public.magic_login_page_header'))
 @section('content')
     <div class="app-content content ">
@@ -20,16 +17,12 @@
                                     <h2 class="brand-text text-primary ml-1">@lang('public.magic_login_page_header')</h2>
                                 </a>
                                 @include('partials.alert')
-                                <form class="auth-login-form mt-2" action="{{route('auth.magic.login.form')}}" method="POST">
+                                <form class="auth-login-form mt-2" action="{{route('auth.magic.send.token')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="email" class="form-label">@lang('public.magic_login_page_email')</label>
                                         <input type="text" class="form-control" id="email" name="email" placeholder="@lang('public.magic_login_page_email_placeholder')" aria-describedby="login-email" tabindex="1" autofocus />
                                     </div>
-
-{{--                                    <div class="form-group center">--}}
-{{--                                        @include('partials.recaptcha')--}}
-{{--                                    </div>--}}
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" name="remember-me" id="remember-me" tabindex="3" />

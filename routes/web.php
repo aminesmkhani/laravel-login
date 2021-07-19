@@ -57,6 +57,7 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
 
     # Login Magic Link
     Route::get('magic/login',[MagicController::class,'showMagicForm'])->name('auth.magic.login.form');
+    Route::post('magic/login',[MagicController::class,'sendToken'])->name('auth.magic.send.token');
 
 
 });
