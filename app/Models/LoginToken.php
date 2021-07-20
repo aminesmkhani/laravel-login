@@ -35,6 +35,12 @@ class LoginToken extends Model
 
     public function isExpired()
     {
-        return $this->created_at->diffInSeconds(now()) > self::TOKEN_EXPIRY ;
+        return $this->created_at->diffInSeconds(now()) > self::TOKEN_EXPIRY;
+    }
+
+    # Delete Trash LoginTokens Expire Data
+    public function scopeExpired($query)
+    {
+        return $query->where('created_at','<' , now()->subSeconds(self::TOKEN_EXPIRY));
     }
 }

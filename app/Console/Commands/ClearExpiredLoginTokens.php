@@ -38,6 +38,6 @@ class ClearExpiredLoginTokens extends Command
      */
     public function handle()
     {
-        LoginToken::where('created_at','<' , now()->subSeconds(120))->delete();
+        LoginToken::expired()->delete();
     }
 }
