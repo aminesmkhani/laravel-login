@@ -77,4 +77,11 @@
         </div>
     </div>
 @endif
+@if(session('invalidToken'))
+    <div class="alert alert-warning" role="alert">
+        <div class="alert-body">
+            @lang('public.invalidToken')
+        </div>
+    </div>
+@endif
 
