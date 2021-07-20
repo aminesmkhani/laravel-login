@@ -23,5 +23,7 @@ trait MagicallyAuthenticable
         return $this->magicToken()->create([
            'token' => Str::random('50')
         ]);
+
+
     }
 }

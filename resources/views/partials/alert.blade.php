@@ -70,4 +70,11 @@
         </div>
     </div>
 @endif
+@if(session('magicLinkSent'))
+    <div class="alert alert-success" role="alert">
+        <div class="alert-body">
+            @lang('public.magicLinkSent')
+        </div>
+    </div>
+@endif
 

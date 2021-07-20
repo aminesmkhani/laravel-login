@@ -16,11 +16,9 @@ class MagicController extends Controller
     public function sendToken(Request $request, MagicAuthentication $auth)
     {
         $this->validateForm($request);
-
-        # Generate Token
         $auth->requestLink();
-        # Send Token
-        # Redirect
+
+        return back()->with('magicLinkSent',true);
     }
 
 

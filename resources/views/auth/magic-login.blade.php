@@ -25,8 +25,8 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" type="checkbox" name="remember-me" id="remember-me" tabindex="3" />
-                                            <label class="custom-control-label" for="remember-me">@lang('public.magic_login_page_remember_me')</label>
+                                            <input class="custom-control-input" type="checkbox" name="remember" id="remember" tabindex="3" />
+                                            <label class="custom-control-label" for="remember">@lang('public.magic_login_page_remember_me')</label>
                                         </div>
                                     </div>
                                     @include('partials.validation-errors')
