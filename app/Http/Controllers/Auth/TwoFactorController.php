@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class TwoFactorController extends Controller
 {
-    //
+    public function showToggleForm()
+    {
+        return view('auth.two-factor.toggle');
+    }
 }
