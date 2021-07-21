@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 class TwoFactorAuthentication
 {
     protected $request;
+    const CODE_SENT = 'code.sent';
 
     public function __construct(Request $request)
     {
@@ -20,11 +21,11 @@ class TwoFactorAuthentication
 
     public function requestCode(User $user)
     {
-        # Generate Code
         $code = TwoFactor::generateCodeFor($user);
-        dd($code);
-        # Send Code
-        # Return Response
+
+        $code->send();
+
+        return static::CODE_SENT;
     }
 
 }

@@ -85,3 +85,11 @@
     </div>
 @endif
 
+@if(session('cantSendCode'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.cantSendCode')
+        </div>
+    </div>
+@endif
+
