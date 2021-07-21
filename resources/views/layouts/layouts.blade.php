@@ -140,7 +140,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="d-flex align-items-center" href="#">
+                <a class="d-flex align-items-center" href="{{route('auth.two.factor.toggle.form')}}">
                     <i data-feather="key"></i>
                     <span class="menu-title text-truncate" data-i18n="log-out">@lang('public.2_auth_title')</span>
                 </a>

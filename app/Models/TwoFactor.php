@@ -13,4 +13,14 @@ class TwoFactor extends Model
       'user_id',
       'code',
     ];
+
+
+    public static function generateCodeFor(User $user)
+    {
+        $user->code()->delete();
+        return static::create([
+           'user_id' => $user->id,
+           'code'    => mt_rand(1000, 9999),
+        ]);
+    }
 }
