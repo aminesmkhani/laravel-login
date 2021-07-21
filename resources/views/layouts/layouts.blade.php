@@ -139,6 +139,12 @@
                     <span class="menu-title text-truncate" data-i18n="log-out">@lang('public.logout')</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather="key"></i>
+                    <span class="menu-title text-truncate" data-i18n="log-out">@lang('public.2_auth_title')</span>
+                </a>
+            </li>
             @endauth
         </ul>
     </div>
