@@ -92,4 +92,18 @@
         </div>
     </div>
 @endif
+@if(session('twoFactorActivated'))
+    <div class="alert alert-success" role="alert">
+        <div class="alert-body">
+            @lang('public.twoFactorActivated')
+        </div>
+    </div>
+@endif
+@if(session('invalidCode'))
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-body">
+            @lang('public.invalidCode')
+        </div>
+    </div>
+@endif
 

@@ -24,15 +24,16 @@
                         @lang('public.two_factor_send_code_success')
                     </p>
                     <br>
-                    <div class="row center">
-                        <div class="col-xl-4 col-md-6 col-12 mb-1">
-                            <div class="form-group">
-                                <label for="basicInput">Basic Input</label>
-                                <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
-                            </div>
+                    <form method="post" action="{{route('auth.two.factor.code')}}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" name="code" class="form-control" id="basicInput" placeholder="@lang('public.two_factor_enter_verify_code_placeholder')">
                         </div>
-                    </div>
-                    <a href="{{route('auth.two.factor.activate')}}" class="btn btn-success waves-effect waves-float waves-light">@lang('public.two_factor_button')</a>
+                        @include('partials.validation-errors')
+                        <button class="btn btn-success waves-effect waves-float waves-light">@lang('public.two_factor_button')</button>
+                        <a href="{{route('auth.two.factor.activate')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_not_submit_code')</a>
+
+                    </form>
                 </div>
 
             </div>
