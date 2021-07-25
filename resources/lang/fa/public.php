@@ -84,6 +84,9 @@ return [
     'code_for_send_two_factor_sms'  => ':code کد تایید دو مرحله ای شما',
     'two_factor_send_code_success'  => 'کد احراز هویت به شماره همراه شما ارسال شده است, لطفاٌ کد را در ورودی زیر وارد نمایید. توجه داشته باشید این کد فقط به مدت یک دقیقه معتبر می باشد',
     'two_factor_success_title'      => 'ارسال کد موفقیت آمیز',
+    'two_factor_enter_verify_code_placeholder'  => 'کد را وارد نمایید...',
+    'two_factor_not_submit_code'    => 'کد را تایید نکردید؟',
+
 
 
 
@@ -109,6 +112,7 @@ return [
     'passwordChanged'   => 'رمز عبور شما با موفقیت تغییر یافت',
     'magicLinkSent'     => 'لینک ورود با موفقیت ارسال شد ',
     'invalidToken'      => 'لینک ورود معتبر نمیباشد',
-    'cantSendCode'      => 'کد ارسال نشد لطفاٌ بعداٌ امتحان کنید'
-
+    'cantSendCode'      => 'کد ارسال نشد لطفاٌ بعداٌ امتحان کنید',
+    'twoFactorActivated'=> 'احراز هویت ۲ مرحله ای با موفقیت انجام شد!',
+    'invalidCode'   => 'کد نامعتبر می باشد',
 ];

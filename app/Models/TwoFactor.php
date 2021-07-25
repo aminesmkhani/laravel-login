@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class TwoFactor extends Model
 {
     use HasFactory;
+    const CODE_EXPIRY = 60; # seconds
     protected $table = 'two_factor';
     protected $fillable = [
       'user_id',
@@ -40,5 +41,15 @@ class TwoFactor extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function isExpired()
+    {
+        return $this->created_at->diffInSeconds(now()) > static::CODE_EXPIRY;
+    }
+
+    public function isEqualWith(string $code)
+    {
+        return $this->code == $code;
     }
 }
