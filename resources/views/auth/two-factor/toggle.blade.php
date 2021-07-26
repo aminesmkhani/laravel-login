@@ -18,14 +18,26 @@
                         </div>
                     </a>
                 </div>
-                <div class="text-center">
-                    <h1 class="mb-1 text-white">@lang('public.2_auth_title')</h1>
+               @if(Auth::user()->hasTwoFactor())
+                    <div class="text-center">
+                        <h1 class="mb-1 text-white">@lang('public.2_auth_title')</h1>
+                        <p class="card-text m-auto w-75">
+                            @lang('public.two_factor_active',['number' => Auth::user()->phone_number])
+                        </p>
+                        <br>
+                        <a href="{{route('auth.two.factor.deactivate')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_button_deactivate')</a>
+                    </div>
+
+                @else
+                    <div class="text-center">
+                        <h1 class="mb-1 text-white">@lang('public.2_auth_title')</h1>
                         <p class="card-text m-auto w-75">
                             @lang('public.two_factor_inactive',['number' => Auth::user()->phone_number])
                         </p>
-                    <br>
-                    <a href="{{route('auth.two.factor.activate')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_button')</a>
-                </div>
+                        <br>
+                        <a href="{{route('auth.two.factor.activate')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_button')</a>
+                    </div>
+               @endif
 
             </div>
 

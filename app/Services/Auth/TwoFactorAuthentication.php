@@ -61,6 +61,10 @@ class TwoFactorAuthentication
         return static::ACTIVATED;
     }
 
+    public function deactivate(User $user)
+    {
+       return $user->deactivateTwoFactor();
+    }
 
     protected function isValidCode()
     {
