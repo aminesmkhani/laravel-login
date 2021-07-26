@@ -18,4 +18,16 @@ trait HasTwoFactor
         $this->has_two_factor = true;
         $this->save();
     }
+
+    public function deactivateTwoFactor()
+    {
+        $this->has_two_factor = false;
+        $this->save();
+    }
+
+    public function hasTwoFactor()
+    {
+        return $this->has_two_factor;
+    }
+
 }

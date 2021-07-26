@@ -86,6 +86,8 @@ return [
     'two_factor_success_title'      => 'ارسال کد موفقیت آمیز',
     'two_factor_enter_verify_code_placeholder'  => 'کد را وارد نمایید...',
     'two_factor_not_submit_code'    => 'کد را تایید نکردید؟',
+    'two_factor_active'             => 'احراز هویت ۲ مرحله ای برای شما برروی شماره تلفن :number فعال می باشد جهت غیر فعال کردن این قابلیت میتوانید بر روی دکمه زیر کلیک کنید',
+    'two_factor_button_deactivate'  => 'لغو کردن',
 
 
 
@@ -115,4 +117,5 @@ return [
     'cantSendCode'      => 'کد ارسال نشد لطفاٌ بعداٌ امتحان کنید',
     'twoFactorActivated'=> 'احراز هویت ۲ مرحله ای با موفقیت انجام شد!',
     'invalidCode'   => 'کد نامعتبر می باشد',
+    'twoFactorDeactivated'  => 'احراز هویت ۲ مرحله ای غیر فعال شد'
 ];

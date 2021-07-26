@@ -59,4 +59,11 @@ class TwoFactorController extends Controller
             'code.digits'   => __('validation.invalidCode'),
         ]);
     }
+
+
+    public function deactivate()
+    {
+        $this->twoFactor->deactivate(Auth::user());
+        return back()->with('twoFactorDeactivated',true);
+    }
 }
