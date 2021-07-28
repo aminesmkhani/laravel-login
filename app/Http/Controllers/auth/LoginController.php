@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Rules\Recaptcha;
+use App\Services\Auth\TwoFactorAuthentication;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,10 +13,12 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     use ThrottlesLogins;
+    protected $twoFactor;
 
-    public function __construct()
+    public function __construct(TwoFactorAuthentication $twoFactor)
     {
         $this->middleware('guest')->except('logout');
+        $this->twoFactor = $twoFactor;
     }
 
     public function showLoginForm()
@@ -22,22 +26,54 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    public function showCodeForm()
+    {
+        return view('auth.two-factor.login-code');
+    }
+
     public function login(Request $request)
     {
         $this->validateForm($request);
+
 
         if ($this->hasTooManyLoginAttempts($request)) {
             return $this->sendLockoutResponse($request);
         }
 
-        if ($this->attemptLogin($request)){
-            $this->sendSuccessRedirect();
+        if (!$this->isValidateCredentials($request))
+        {
+            $this->incrementLoginAttempts($request);
+            return $this->sendLoginFailedResponse();
         }
-        $this->incrementLoginAttempts($request);
-        return $this->sendLoginFailedResponse();
+
+
+        # if use active 2 auth system
+
+        $user = $this->getUser($request);
+        if ($user->hasTwoFactor())
+        {
+            $this->twoFactor->requestCode($user);
+            return $this->sendHasTwoFactorResponse();
+        }
+
+
+        Auth::login($user, $request->remember);
+        return $this->sendSuccessRedirect();
 
     }
 
+
+    protected function isValidateCredentials ($request)
+    {
+        return Auth::validate($request->only([
+            'email', 'password'
+        ]));
+    }
+
+    protected function sendHasTwoFactorResponse()
+    {
+        return redirect()->route('auth.login.code.form');
+    }
 
     protected function validateForm(Request $request)
     {
@@ -51,14 +87,6 @@ class LoginController extends Controller
             'g-recaptcha-response.required' => __('public.recaptcha'),
         ]
     );
-    }
-
-
-
-    protected function attemptLogin(Request $request)
-    {
-       return Auth::attempt($request->only('email', 'password'), $request->filled('remember-me'));
-
     }
 
 
@@ -84,5 +112,11 @@ class LoginController extends Controller
     protected function username()
     {
         return 'email';
+    }
+
+
+    protected function getUser($request)
+    {
+        return User::where('email', $request->email)->firstOrFail();
     }
 }
