@@ -31,7 +31,7 @@
                         </div>
                         @include('partials.validation-errors')
                         <button class="btn btn-success waves-effect waves-float waves-light">@lang('public.two_factor_button')</button>
-                        <a href="{{route('auth.two.factor.activate')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_not_submit_code')</a>
+                        <a href="{{route('auth.two.factor.resent')}}" class="btn btn-warning waves-effect waves-float waves-light">@lang('public.two_factor_not_submit_code')</a>
 
                     </form>
                 </div>

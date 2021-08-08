@@ -70,6 +70,7 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
     Route::get('two-factor/code',[TwoFactorController::class,'showEnterCodeForm'])->name('auth.two.factor.code.form');
     Route::post('two-factor/code',[TwoFactorController::class,'confirmCode'])->name('auth.two.factor.code');
     Route::get('two-factor/deactivate',[TwoFactorController::class,'deactivate'])->name('auth.two.factor.deactivate');
+    Route::get('twp-factor/resent',[TwoFactorController::class,'resent'])->name('auth.two.factor.resent');
 
 
 
