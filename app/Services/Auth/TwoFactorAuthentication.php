@@ -50,6 +50,11 @@ class TwoFactorAuthentication
         session(['user_id','code_id','remember']);
     }
 
+    public function resent()
+    {
+        return $this->requestCode($this->getUser());
+    }
+
     public function activate()
     {
 

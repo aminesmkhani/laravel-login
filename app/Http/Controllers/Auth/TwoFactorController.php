@@ -14,7 +14,7 @@ class TwoFactorController extends Controller
 
     public function __construct(TwoFactorAuthentication $twoFactor)
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('resent');
         $this->twoFactor = $twoFactor;
     }
 
@@ -32,6 +32,15 @@ class TwoFactorController extends Controller
             : back()->with('cantSendCode',true);
     }
 
+
+    public function resent()
+    {
+        $this->twoFactor->resent();
+
+        return back()->with('codeResent', true);
+
+    }
+
     public function showEnterCodeForm()
     {
         return view('auth.two-factor.enter-code');
@@ -42,7 +51,7 @@ class TwoFactorController extends Controller
     {
         # Validate Code
 
-        $this->validateForm($request);
+//        $this->validateForm($request);
         $response = $this->twoFactor->activate();
 
         return $response === $this->twoFactor::ACTIVATED

@@ -113,4 +113,11 @@
         </div>
     </div>
 @endif
+@if(session('codeResent'))
+    <div class="alert alert-success" role="alert">
+        <div class="alert-body">
+            @lang('public.codeResent')
+        </div>
+    </div>
+@endif
 

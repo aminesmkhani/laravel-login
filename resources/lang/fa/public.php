@@ -117,5 +117,6 @@ return [
     'cantSendCode'      => 'کد ارسال نشد لطفاٌ بعداٌ امتحان کنید',
     'twoFactorActivated'=> 'احراز هویت ۲ مرحله ای با موفقیت انجام شد!',
     'invalidCode'   => 'کد نامعتبر می باشد',
-    'twoFactorDeactivated'  => 'احراز هویت ۲ مرحله ای غیر فعال شد'
+    'twoFactorDeactivated'  => 'احراز هویت ۲ مرحله ای غیر فعال شد',
+    'codeResent'    => 'کد احراز هویت برای شما دوباره ارسال شد',
 ];
