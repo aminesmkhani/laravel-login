@@ -36,6 +36,7 @@ Route::group(['prefix' =>'auth', 'namespace' => 'Auth'],function (){
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('auth.login.form');
     Route::post('login', [LoginController::class, 'login'])->name('auth.login');
     Route::get('login/code',[LoginController::class, 'showCodeForm'])->name('auth.login.code.form');
+    Route::post('login/code',[LoginController::class, 'confirmCode'])->name('auth.login.code');
 
    # Logout
     Route::get('logout',[LoginController::class, 'logout'])->name('auth.logout');

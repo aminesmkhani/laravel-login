@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Code;
 use App\Models\User;
 use App\Rules\Recaptcha;
 use App\Services\Auth\TwoFactorAuthentication;
@@ -43,7 +44,7 @@ class LoginController extends Controller
         if (!$this->isValidateCredentials($request))
         {
             $this->incrementLoginAttempts($request);
-            return $this->sendLoginFailedResponse();
+            return  $this->sendLoginFailedResponse();
         }
 
 
@@ -73,6 +74,15 @@ class LoginController extends Controller
     protected function sendHasTwoFactorResponse()
     {
         return redirect()->route('auth.login.code.form');
+    }
+
+
+    public function confirmCode(Code $request)
+    {
+        $response = $this->twoFactor->login();
+        return $response === $this->twoFactor::AUTHENTICATED
+            ? $this->sendSuccessRedirect()
+            : back()->with('invalidCode', true);
     }
 
     protected function validateForm(Request $request)
@@ -115,7 +125,7 @@ class LoginController extends Controller
     }
 
 
-    protected function getUser($request)
+    protected function   getUser($request)
     {
         return User::where('email', $request->email)->firstOrFail();
     }

@@ -24,7 +24,7 @@
                         @lang('public.two_factor_send_code_success')
                     </p>
                     <br>
-                    <form method="post" action="{{route('auth.two.factor.code')}}">
+                    <form method="post" action="{{route('auth.login.code')}}">
                         @csrf
                         <div class="form-group">
                             <input type="text" name="code" class="form-control" id="basicInput" placeholder="@lang('public.two_factor_enter_verify_code_placeholder')">

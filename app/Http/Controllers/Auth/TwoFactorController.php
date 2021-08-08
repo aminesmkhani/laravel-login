@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Code;
 use App\Services\Auth\TwoFactorAuthentication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +38,7 @@ class TwoFactorController extends Controller
     }
 
 
-    public function confirmCode(Request $request)
+    public function confirmCode(Code $request)
     {
         # Validate Code
 
@@ -49,17 +50,6 @@ class TwoFactorController extends Controller
             : back()->with('invalidCode',true);
 
     }
-
-    protected function validateForm(Request $request)
-    {
-        $request->validate([
-           'code'   => ['required','numeric','digits:4']
-        ],
-        [
-            'code.digits'   => __('validation.invalidCode'),
-        ]);
-    }
-
 
     public function deactivate()
     {
